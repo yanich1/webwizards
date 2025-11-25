@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Wizards - Conception de Sites Web Propres et Simples</title>
+    <title>WebWizards - Création Front-End Propulsée par l'IA</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -424,6 +424,63 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
+        /* Section Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            padding: 2rem;
+            background: rgba(10, 15, 44, 0.6);
+            border: 1px solid rgba(32, 198, 255, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(32, 198, 255, 0.4);
+            border-color: var(--neon-blue);
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+        }
+
+        .portfolio-item p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .portfolio-link:hover {
+            text-decoration: underline;
+        }
+
         /* Section Processus */
         .process-timeline {
             max-width: 800px;
@@ -478,6 +535,71 @@
             color: var(--neon-blue);
         }
 
+        /* Section Tarification */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            padding: 2.5rem;
+            background: rgba(10, 15, 44, 0.6);
+            border: 1px solid rgba(32, 198, 255, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+
+
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+            font-weight: bold;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: rgba(123, 43, 255, 0.2);
+            border: 1px solid var(--neon-purple);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            box-shadow: 0 0 20px rgba(123, 43, 255, 0.3);
+        }
+
         /* Section Pourquoi choisir */
         .why-grid {
             display: grid;
@@ -506,6 +628,37 @@
 
         .why-item h3 {
             margin-bottom: 0.8rem;
+            color: var(--neon-blue);
+        }
+
+        /* Section Témoignages */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            background: rgba(10, 15, 44, 0.6);
+            border: 1px solid rgba(32, 198, 255, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(32, 198, 255, 0.3);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
             color: var(--neon-blue);
         }
 
@@ -710,6 +863,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
             nav ul {
                 display: none;
             }
@@ -728,11 +889,11 @@
     <!-- En-tête -->
     <header>
         <nav>
-            <div class="logo-text">WEB WIZARDS</div>
+            <div class="logo-text">WebWizards</div>
             <ul>
                 <li><a href="#hero">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#process">Processus</a></li>
+                <li><a href="#pricing">Tarifs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -747,14 +908,13 @@
             </div>
         </div>
         <div class="hero-content">
-            <h1>Je crée des sites web propres et simples pour étudiants et petits projets</h1>
-            <p>Je conçois des sites web modernes et faciles à utiliser avec des mises en page claires, des sections
-                simples et une structure fluide. Parfait pour les travaux scolaires, les pages personnelles et les
-                petites idées qui ont besoin d'une présence en ligne basique.</p>
-            <div class="badge">Abordable — Adapté aux étudiants — Livraison rapide</div>
+            <h1>Sites Web Front-End. Rapides. Simples. Modernes.</h1>
+            <p>Je crée des sites web épurés et futuristes en utilisant la conception assistée par IA, parfaits pour les
+                étudiants, les débutants et les petits projets.</p>
+            <div class="badge">⚡ Abordable — Adapté aux étudiants — Livraison rapide</div>
             <div class="btn-group">
-                <a href="#contact" class="btn btn-primary">Obtenez votre site web →</a>
-                <a href="#services" class="btn btn-secondary">Voir les services</a>
+                <a href="#contact" class="btn btn-primary">Obtenez votre site →</a>
+
             </div>
         </div>
     </section>
@@ -764,21 +924,22 @@
         <div class="avatar"></div>
         <div class="about-content">
             <h2>Qui suis-je ?</h2>
-            <p>Je suis un créateur front-end débutant qui aime créer des sites web simples, organisés et modernes. Je me
-                concentre sur une structure claire, un texte lisible et des sections fluides. Mon travail est idéal pour
-                les étudiants, les profils personnels et les petits projets.</p>
+            <p>Je suis un créateur de sites web front-end qui mélange les outils de conception IA avec les techniques
+                modernes d'interface utilisateur. Je construis des sites web simples, épurés et futuristes, parfaits
+                pour les étudiants, les projets personnels et les petites idées d'entreprise. Je ne suis pas un
+                développeur senior — mais je suis rapide, créatif, et je livre des résultats modernes et nets.</p>
             <div class="features">
                 <div class="feature-item">
                     <span>⚡</span>
-                    <div>Travail rapide</div>
+                    <div>Livraison rapide</div>
                 </div>
                 <div class="feature-item">
-                    <span>🎨</span>
-                    <div>Design épuré</div>
+                    <span>💻</span>
+                    <div>UI moderne</div>
                 </div>
                 <div class="feature-item">
-                    <span>🤝</span>
-                    <div>Communication facile</div>
+                    <span>🎯</span>
+                    <div>Processus simple</div>
                 </div>
             </div>
         </div>
@@ -790,21 +951,22 @@
         <div class="services-grid">
             <div class="service-card">
                 <h3>Pages de destination simples</h3>
-                <p>Sites web d'une seule page avec des sections claires et une mise en page moderne. Parfait pour
-                    présenter une idée ou un projet unique avec un design professionnel et épuré.</p>
+                <p>Sites web d'une seule page avec des mises en page futuristes et épurées. Parfait pour mettre en
+                    valeur un produit, un service ou une idée unique avec un attrait visuel époustouflant.</p>
             </div>
             <div class="service-card">
-                <h3>Portfolios étudiants</h3>
-                <p>Portfolios pour étudiants afin de montrer leurs projets, compétences et informations. Idéal pour les
-                    devoirs scolaires ou le branding personnel.</p>
+                <h3>Sites web portfolio pour étudiants</h3>
+                <p>Portfolios modernes pour les projets scolaires ou le branding personnel. Démarquez-vous avec une
+                    présence en ligne professionnelle qui impressionne les enseignants et les pairs.</p>
             </div>
             <div class="service-card">
-                <h3>Sites web pour petites entreprises</h3>
-                <p>Petits sites web de deux ou trois pages pour des idées ou services simples. Mettez votre entreprise
-                    en ligne rapidement et à moindre coût.</p>
+                <h3>Sites web mini-entreprise</h3>
+                <p>Parfait pour les petits services, idées ou startups en phase de démarrage. Mettez-vous en ligne
+                    rapidement avec un look professionnel qui ne ruine pas votre budget.</p>
             </div>
         </div>
     </section>
+
 
     <!-- Section Processus -->
     <section id="process">
@@ -814,68 +976,114 @@
                 <div class="step-number">1</div>
                 <div class="step-content">
                     <h3>Vous décrivez votre idée</h3>
-                    <p>Dites-moi quelles pages vous voulez et quel contenu vous avez besoin. Partagez votre vision et
-                        vos exigences.</p>
+                    <p>Parlez-moi de votre projet, de ce dont vous avez besoin et de votre vision. Je comprendrai vos
+                        objectifs et vos exigences.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h3>Je crée le design</h3>
-                    <p>Je prépare une maquette de base et montre à quoi ressemblera le site web. Nous affinons jusqu'à
-                        ce que ce soit parfait.</p>
+                    <h3>Conception UI (IA + Manuel)</h3>
+                    <p>Je crée des designs époustouflants en utilisant des outils IA combinés à des ajustements manuels
+                        pour garantir que tout soit parfait.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3>Je construis le site web</h3>
-                    <p>J'utilise HTML, CSS et un peu de JavaScript si nécessaire pour donner vie à votre design.</p>
+                    <h3>Développement Front-End</h3>
+                    <p>Je code votre site web avec des technologies modernes HTML, CSS et JavaScript, en m'assurant
+                        qu'il soit réactif et fonctionnel.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <h3>Livraison</h3>
-                    <p>Vous recevez vos fichiers ou je vous aide à mettre le site web en ligne. Soyez en ligne
-                        rapidement et facilement.</p>
+                    <h3>Livraison & Mise en ligne</h3>
+                    <p>Recevez les fichiers complets de votre site web et une assistance optionnelle pour l'hébergement
+                        afin de vous mettre en ligne rapidement.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Section Tarification -->
+    <section id="pricing">
+        <h2 class="section-title">Tarifs</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">1500DA</div>
+                <ul class="pricing-features">
+                    <li>Site d'une page</li>
+                    <li>Design épuré</li>
+                    <li>Livraison rapide</li>
+                    <li>Adapté mobile</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Commencer</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Standard</h3>
+                <div class="price">3000DA</div>
+                <ul class="pricing-features">
+                    <li>Jusqu'à 3 pages</li>
+                    <li>Animations incluses</li>
+                    <li>Design réactif</li>
+                    <li>Mises en page personnalisées</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Commencer</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Complet</h3>
+                <div class="price">6000DA</div>
+                <ul class="pricing-features">
+                    <li>Site mini-entreprise complet</li>
+                    <li>Mises en page personnalisées</li>
+                    <li>Optimisé mobile</li>
+                    <li>Animations premium</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Commencer</a>
+            </div>
+        </div>
+        <div class="discount-badge">🎓 Remises spéciales pour les étudiants</div>
+    </section>
+
     <!-- Section Pourquoi choisir -->
     <section id="why">
-        <h2 class="section-title">Pourquoi choisir Web Wizards ?</h2>
+        <h2 class="section-title">Pourquoi choisir WebWizards ?</h2>
         <div class="why-grid">
             <div class="why-item">
                 <div class="why-icon">⚡</div>
-                <h3>Travail rapide</h3>
-                <p>Je termine les projets rapidement tout en maintenant une bonne qualité. Pas de long temps d'attente.
-                </p>
+                <h3>Rapide</h3>
+                <p>Délais d'exécution rapides sans compromettre la qualité. Obtenez votre site web en jours, pas en
+                    semaines.</p>
             </div>
             <div class="why-item">
                 <div class="why-icon">💸</div>
-                <h3>Prix abordables</h3>
-                <p>Prix adaptés aux étudiants et débutants. Sites web de qualité qui ne videront pas votre budget.</p>
+                <h3>Abordable</h3>
+                <p>Tarification adaptée aux étudiants qui ne ruine pas votre budget. Résultats professionnels à des prix
+                    accessibles.</p>
             </div>
             <div class="why-item">
                 <div class="why-icon">🎨</div>
-                <h3>Look moderne</h3>
-                <p>Je me concentre sur des sections épurées et une bonne structure. Votre site web aura l'air
-                    professionnel et soigné.</p>
+                <h3>Belle interface</h3>
+                <p>Designs modernes et accrocheurs qui se démarquent. Votre site web aura l'air professionnel et soigné.
+                </p>
             </div>
             <div class="why-item">
                 <div class="why-icon">🤝</div>
-                <h3>Facile à joindre</h3>
-                <p>Je réponds rapidement et garde tout simple. Communication claire tout au long du processus.</p>
+                <h3>Communication amicale</h3>
+                <p>Communication claire et réactive tout au long du processus. Je suis là pour aider et rendre le
+                    processus fluide.</p>
             </div>
         </div>
     </section>
 
+
+
     <!-- Section Contact -->
     <section id="contact">
-        <h2 class="section-title">Contactez-moi</h2>
+        <h2 class="section-title">Entrez en contact</h2>
         <div class="contact-container">
             <div class="contact-form">
                 <div class="form-status" id="formStatus"></div>
@@ -890,7 +1098,7 @@
                 <div class="form-group">
                     <label for="message">Décrivez votre projet</label>
                     <textarea id="message" name="message"
-                        placeholder="Parlez-moi de votre idée de projet, des pages nécessaires et de toute exigence spécifique..."
+                        placeholder="Parlez-moi de votre idée de projet, de vos exigences et de votre calendrier..."
                         required></textarea>
                 </div>
                 <button id="sendMessageBtn" class="btn btn-primary">Envoyer le message →</button>
@@ -902,7 +1110,6 @@
                         <div class="contact-icon">📱</div>
                         <div>
                             <strong>WhatsApp</strong><br>
-                            Discutez directement avec moi
                         </div>
                     </div>
                     <a href="https://wa.me/213654014986" target="_blank" class="btn btn-primary contact-btn">Ouvrir
@@ -913,7 +1120,6 @@
                         <div class="contact-icon">💬</div>
                         <div>
                             <strong>Telegram</strong><br>
-                            Envoyez-moi un message sur Telegram
                         </div>
                     </div>
                     <a href="https://t.me/webwizards0" target="_blank" class="btn btn-primary contact-btn">Ouvrir
@@ -924,13 +1130,12 @@
                         <div class="contact-icon">✉️</div>
                         <div>
                             <strong>Email</strong><br>
-                            Envoyez-moi un email
                         </div>
                     </div>
                     <a href="mailto:yanichioukh@protonmail.com" class="btn btn-primary contact-btn">Envoyer un email</a>
                 </div>
                 <div class="response-time">
-                    <strong>⏱️ Je réponds généralement rapidement</strong>
+                    <strong>⏱️ Délai de réponse : Moins d'1 heure</strong>
                 </div>
             </div>
         </div>
@@ -938,13 +1143,11 @@
 
     <!-- Pied de page -->
     <footer>
-        <p>© 2025 Web Wizards — Conception de sites web propres et simples</p>
+        <p>© 2025 WebWizards — Création Front-End Propulsée par l'IA</p>
         <nav>
             <a href="#hero">Accueil</a>
             <a href="#services">Services</a>
-            <a href="#process">Processus</a>
             <a href="#contact">Contact</a>
-        </nav>
     </footer>
 
     <script>
